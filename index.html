@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coba</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="jquery.js"></script>
+	<script src="jquery.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</head>
+<body id="particles-js">
+	<div class="front">
+		<h4><span class="typed"></span></h4>
+		<center><a href="#" id="start">Start Now!</a></center>
+	</div>
+	<!-- <div id="openmenu">
+		<img src="">
+	</div> -->
+	<div id="closemenu">
+		<img src="img/closer.png" style="color:white;">
+	</div>
+	<div id="main">
+		<div id="logosec">
+			<h1>Matching Card Game</h1>
+			<img src="img/memoryy.png">
+		</div>
+		<div id="menusec">
+			<img src="img/controller.png">
+			<a href="game.html" id="how">Play Now!</a>
+		</div>
+	</div>
+</body>
+<script src="particle/particles.min.js"></script>
+<script src="typed.js"></script>
+<script type="text/javascript">
+	 var typed = new Typed(".typed",{
+            strings : ["Welcome To R-Zone!", "Click Button to Play"],
+            typeSpeed : 50,
+            backSpeed : 50,
+            loop : true,
+            showCursor : true,
+            cursorChar : '|'
+        });
+	particlesJS.load('particles-js', 'particle2.json',
+			function(){
+				console.log('loaded...')
+			})
+	function anim(targetedDiv) {
+		var targetedLetter = $("#"+targetedDiv+" .rotate").text();
+		var asciiValue = targetedLetter.charCodeAt(0); 
+		var pointer = 65;
+
+		changeChar();
+
+		function changeChar(){
+			if (pointer <= asciiValue) {
+				$("#"+targetedDiv+" .rotate").text(String.fromCharCode(pointer));
+
+				pointer++;
+				setTimeout(changeChar,20);
+			}
+			else{
+				$(this).stop;
+			}
+		}
+	}
+</script>
+</html>

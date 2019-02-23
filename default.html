@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coba</title>
+	<link rel="stylesheet" type="text/css" href="default.css">
+	<script src="jquery.js"></script>
+	<script src="jquery.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+	<div id="front">
+		WELCOME TO R-ZONE
+		<center><a href="#" id="start">Start Now!</a></center>
+	</div>
+	<!-- <div id="openmenu">
+		<img src="">
+	</div> -->
+	<div id="closemenu">
+		<img src="">
+	</div>
+	<div id="main">
+		<div id="logosec">
+			<img src="logo putih.png" width="270" height="150">
+		</div>
+		<div id="menusec">
+			<ul>
+				<li onmouseover="anim('about')">
+					<div id="about" class="menu">
+						ABOU
+						<div class="rotate">T</div>
+					</div>
+				</li>
+				<li onmouseover="anim('work')">
+					<div id="work" class="menu">
+						WOR
+						<div class="rotate">K</div>
+					</div>
+				</li>
+				<li onmouseover="anim('services')">
+					<div id="services" class="menu">
+						SERVICE
+						<div class="rotate">S</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+	function anim(targetedDiv) {
+		var targetedLetter = $("#"+targetedDiv+" .rotate").text();
+		var asciiValue = targetedLetter.charCodeAt(0); 
+		var pointer = 65;
+
+		changeChar();
+
+		function changeChar(){
+			if (pointer <= asciiValue) {
+				$("#"+targetedDiv+" .rotate").text(String.fromCharCode(pointer));
+
+				pointer++;
+				setTimeout(changeChar,20);
+			}
+			else{
+				$(this).stop;
+			}
+		}
+	}
+</script>
+</html>
